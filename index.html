@@ -35,7 +35,7 @@
 </head>
 <body>
     <div id="root"></div>
-    <!-- 所有的邏輯都集中在 index.tsx，由 Babel 直接載入 -->
+    <!-- 確保此處直接載入 index.tsx，不依賴任何外部本地模組 -->
     <script type="text/babel" data-presets="typescript,react" src="index.tsx"></script>
 </body>
 </html>
