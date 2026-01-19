@@ -13,20 +13,16 @@
             --text-main: #1e293b;
             --text-light: #64748b;
             --white: #ffffff;
-            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
         }
 
-        * {
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             margin: 0;
             background-color: var(--bg-body);
             color: var(--text-main);
-            line-height: 1.5;
             display: flex;
             flex-direction: column;
         }
@@ -46,24 +42,6 @@
             z-index: 100;
         }
 
-        .sidebar-header {
-            margin-bottom: 2.5rem;
-        }
-
-        .logo-box {
-            background: var(--primary);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
-        }
-
         .sidebar nav button {
             display: flex;
             align-items: center;
@@ -76,7 +54,6 @@
             font-weight: 900;
             cursor: pointer;
             border-radius: 1rem;
-            transition: all 0.3s;
             margin-bottom: 0.5rem;
             text-align: left;
         }
@@ -84,45 +61,59 @@
         .sidebar nav button.active {
             background: var(--primary);
             color: white;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
         }
 
-        /* Mobile Header */
+        /* Mobile Layout */
         header.mobile-header {
             background: var(--primary);
             color: white;
-            padding: 2rem 1.5rem;
+            padding: 2.5rem 1.5rem;
             text-align: center;
             border-radius: 0 0 2.5rem 2.5rem;
-            box-shadow: var(--shadow);
         }
 
-        header.mobile-header h1 { margin: 0; font-size: 1.5rem; font-weight: 900; }
+        header h1 { margin: 0; font-size: 1.6rem; font-weight: 900; }
+        
+        .header-actions {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            align-items: center;
+        }
+
         .badge {
-            display: inline-block;
             background: #dc2626;
-            padding: 0.25rem 0.75rem;
-            border-radius: 1rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 2rem;
             font-size: 0.75rem;
             font-weight: bold;
-            margin-top: 0.5rem;
         }
 
-        /* Content Area */
+        .download-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
         main {
             flex-grow: 1;
             padding: 1.5rem;
             max-width: 1000px;
             width: 100%;
             margin: 0 auto;
-            padding-bottom: 120px; /* Mobile nav space */
+            padding-bottom: 140px;
         }
 
-        .page {
-            display: none;
-            animation: fadeIn 0.4s ease-out forwards;
-        }
-
+        .page { display: none; animation: fadeIn 0.4s ease-out forwards; }
         .page.active { display: block; }
 
         @keyframes fadeIn {
@@ -130,14 +121,12 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Cards & UI Elements */
         .card {
             background: var(--white);
             border-radius: 1.5rem;
             padding: 1.5rem;
             margin-bottom: 1.25rem;
-            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
-            border: 1px solid #f1f5f9;
+            box-shadow: var(--shadow);
         }
 
         .section-title {
@@ -145,107 +134,74 @@
             align-items: center;
             gap: 0.75rem;
             font-weight: 900;
-            margin-bottom: 1.5rem;
-            padding: 0.75rem 1rem;
+            margin-bottom: 1.25rem;
+            padding: 0.8rem 1.2rem;
             background: var(--primary);
             color: white;
-            border-radius: 1rem;
+            border-radius: 1.2rem;
         }
 
         .grid { display: grid; gap: 1rem; }
         .grid-2 { grid-template-columns: 1fr; }
 
-        /* Schedule Timeline */
-        .timeline { border-left: 2px solid #e2e8f0; margin-left: 1rem; padding-left: 1.5rem; }
-        .timeline-item { position: relative; margin-bottom: 1.5rem; }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -1.95rem;
-            top: 0.25rem;
-            width: 12px;
-            height: 12px;
-            background: var(--primary);
-            border: 3px solid white;
-            border-radius: 50%;
+        .time-tag {
+            font-family: monospace;
+            font-weight: bold;
+            color: var(--primary);
+            background: #eff6ff;
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.4rem;
         }
-        .time { font-family: monospace; font-weight: bold; color: var(--primary); font-size: 0.85rem; }
 
-        /* Mobile Nav */
+        .table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+        .table th, .table td { padding: 0.75rem; border-bottom: 1px solid #f1f5f9; text-align: left; }
+        .table th { color: var(--text-light); font-weight: 900; }
+
         .mobile-nav {
             position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            bottom: 0; left: 0; right: 0;
+            background: rgba(255, 255, 255, 0.98);
             display: flex;
             justify-content: space-around;
-            padding: 0.75rem 1rem 1.5rem 1rem;
+            padding: 0.8rem 1rem 1.8rem 1rem;
             border-top: 1px solid #e2e8f0;
-            border-radius: 2rem 2rem 0 0;
-            box-shadow: 0 -10px 25px rgba(0,0,0,0.05);
+            border-radius: 2.5rem 2.5rem 0 0;
             z-index: 1000;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
         }
 
         .nav-btn {
-            background: none;
-            border: none;
-            color: var(--text-light);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.25rem;
-            font-size: 0.7rem;
-            font-weight: 900;
-            cursor: pointer;
-            width: 20%;
+            background: none; border: none; color: var(--text-light);
+            display: flex; flex-direction: column; align-items: center;
+            font-size: 0.7rem; font-weight: 900; cursor: pointer; width: 20%;
         }
-
         .nav-btn.active { color: var(--primary); }
-        .nav-icon { font-size: 1.4rem; }
+        .nav-icon { font-size: 1.4rem; margin-bottom: 0.2rem; }
 
-        /* Desktop Styles */
         @media (min-width: 768px) {
             body { flex-direction: row; }
             .sidebar { display: flex; }
             .mobile-header, .mobile-nav { display: none; }
-            main { margin-left: 260px; padding: 3rem; padding-bottom: 3rem; }
+            main { margin-left: 260px; padding: 3rem; }
             .grid-2 { grid-template-columns: 1fr 1fr; }
         }
-
-        /* Checkbox List */
-        .check-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem;
-            background: white;
-            border-radius: 1rem;
-            margin-bottom: 0.5rem;
-            border: 1px solid #f1f5f9;
-        }
-        input[type="checkbox"] { width: 1.2rem; height: 1.2rem; cursor: pointer; }
-
     </style>
 <script type="importmap">
 {
   "imports": {
-    "react/": "https://esm.sh/react@^19.2.3/",
     "react": "https://esm.sh/react@^19.2.3",
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react/": "https://esm.sh/react@^19.2.3/"
   }
 }
 </script>
 </head>
 <body>
 
-    <!-- Desktop Sidebar -->
     <aside class="sidebar">
-        <div class="sidebar-header">
-            <div class="logo-box">✈️</div>
-            <h2 style="margin:0; font-weight:900;">2026 LTC</h2>
-            <small style="color:var(--text-light)">KOREA HANDBOOK</small>
+        <div style="margin-bottom: 2rem;">
+            <h2 style="margin:0; font-weight:900; color:var(--primary);">2026 LTC</h2>
+            <small style="color:var(--text-light)">KOREA VISIT HANDBOOK</small>
         </div>
         <nav id="sidebar-nav">
             <button onclick="showPage('home')" class="active">🏠 概覽</button>
@@ -256,157 +212,195 @@
         </nav>
     </aside>
 
-    <!-- Mobile Header -->
     <header class="mobile-header">
         <h1>2026 大學部 LTC</h1>
-        <div class="badge">FEB 06 — 09</div>
+        <div class="header-actions">
+            <div class="badge">2/6 ~ 2/9</div>
+            <a href="#" class="download-btn">📥 下載 PDF</a>
+        </div>
     </header>
 
     <main>
         <!-- Home Page -->
         <section id="home" class="page active">
-            <div class="section-title">✨ 訪韓目標</div>
+            <div class="section-title">✨ 訪韓三大方向</div>
             <div class="grid">
-                <div class="card" style="border-left: 8px solid #6366f1;">得著力量與火，領受屬天構想進行奔跑之年。</div>
-                <div class="card" style="border-left: 8px solid #ec4899;">與聖三位、耶穌和老師以魂以靈相通見面。</div>
-            </div>
-            <div class="section-title">✈️ 航班資訊</div>
-            <div class="grid-2 grid">
-                <div class="card">
-                    <strong style="color:#10b981">去程 [2/6 五]</strong><br>
-                    <span class="time">02:35 - 05:45</span><br>
-                    桃園 (TPE) → 清洲 (CJJ)<br>
-                    <small>集合：2/5 22:00 桃機第一航廈</small>
+                <div class="card" style="border-left: 8px solid #6366f1;">
+                    <strong>1. 屬天精神領受</strong><br>
+                    透過見證交流得著力量與火，領受屬天構想進行奔跑之年。
                 </div>
-                <div class="card">
-                    <strong style="color:#f59e0b">回程 [2/9 一]</strong><br>
-                    <span class="time">23:45 - 01:15(+1)</span><br>
-                    清洲 (CJJ) → 桃園 (TPE)<br>
-                    <small>集合：19:30 前往清洲機場</small>
+                <div class="card" style="border-left: 8px solid #ec4899;">
+                    <strong>2. 靈肉相見</strong><br>
+                    與聖三位、耶穌和老師以魂以靈相通見面。
+                </div>
+                <div class="card" style="border-left: 8px solid #3b82f6;">
+                    <strong>3. 校園巡禮</strong><br>
+                    更加體會與主一起奔跑的深刻故事與意義。
+                </div>
+            </div>
+
+            <div class="section-title">👥 分工介紹</div>
+            <div class="card">
+                <table class="table">
+                    <tr><th>項目</th><th>人員</th><th>負責事項</th></tr>
+                    <tr><td>正/副領隊</td><td>胡琬霖、主真實</td><td>行政統籌</td></tr>
+                    <tr><td>財務</td><td>黃千芳</td><td>零用錢、保險、會計</td></tr>
+                    <tr><td>醫療組</td><td>許珮甄</td><td>外傷/腸胃藥/喉糖</td></tr>
+                    <tr><td>發射器</td><td>主真實</td><td>廣播發射器</td></tr>
+                    <tr><td>生活翻譯</td><td>蘇玟琳</td><td>-</td></tr>
+                </table>
+            </div>
+
+            <div class="section-title">🍱 午餐值日生</div>
+            <div class="card">
+                <div style="font-size:0.85rem; line-height:1.8;">
+                    <strong>2/6：</strong>陳子敬、陳泓霖、林竑堯<br>
+                    <strong>2/7：</strong>賴敬和、李易昀、謝漢興<br>
+                    <strong>2/8：</strong>張凱傑、林柏儒、趙宥駿
                 </div>
             </div>
         </section>
 
         <!-- Schedule Page -->
         <section id="schedule" class="page">
-            <div class="section-title">📅 詳細行程</div>
+            <div class="section-title">✈️ 航班資訊</div>
             <div class="grid-2 grid">
                 <div class="card">
-                    <h3 style="color:var(--primary)">2/6 (五) 聖地領受</h3>
-                    <div class="timeline">
-                        <div class="timeline-item"><span class="time">02:35</span> 搭機前往清洲</div>
-                        <div class="timeline-item"><span class="time">09:00</span> 抵達月明洞 / 分發掛牌</div>
-                        <div class="timeline-item"><span class="time">13:30</span> 台韓交流會 / 校園見證</div>
-                        <div class="timeline-item"><span class="time">20:00</span> 入住大屯山飯店</div>
-                    </div>
+                    <span class="badge" style="background:#10b981">去程 ZE782</span><br><br>
+                    <strong>2/6 (五) 02:35 - 05:45</strong><br>
+                    桃園 (TPE) → 清洲 (CJJ)<br>
+                    <small style="color:#dc2626; font-weight:bold;">⚠️ 2/5 23:15 桃機一航集合</small>
                 </div>
                 <div class="card">
-                    <h3 style="color:var(--primary)">2/7 (六) 靈感火熱</h3>
-                    <div class="timeline">
-                        <div class="timeline-item"><span class="time">09:00</span> LTC 開幕 / 中央話語</div>
-                        <div class="timeline-item"><span class="time">14:00</span> 二代通過式 @316本堂</div>
-                        <div class="timeline-item"><span class="time">18:00</span> 李本家烤肉 / 買隔日早餐</div>
-                    </div>
+                    <span class="badge" style="background:#f59e0b">回程 ZE781</span><br><br>
+                    <strong>2/9 (一) 23:45 - 01:15</strong><br>
+                    清洲 (CJJ) → 桃園 (TPE)<br>
+                    <small>19:30 出發前往機場</small>
+                </div>
+            </div>
+
+            <div class="section-title">🗓️ 詳細行程</div>
+            <div class="card">
+                <h4 style="color:var(--primary); margin:0 0 1rem 0;">2/6 (五) 聖地領受</h4>
+                <div style="font-size:0.85rem; line-height:2;">
+                    <span class="time-tag">07:30</span> 上巴士出發<br>
+                    <span class="time-tag">09:00</span> 抵達月明洞 (需載SS先到主生命)<br>
+                    <span class="time-tag">10:00</span> 特講：屬天構想<br>
+                    <span class="time-tag">13:30</span> 台韓交流會：見證、小組交流<br>
+                    <span class="time-tag">20:00</span> 入住大屯山飯店
+                </div>
+            </div>
+            <div class="card">
+                <h4 style="color:var(--primary); margin:0 0 1rem 0;">2/7 (六) 靈感火熱</h4>
+                <div style="font-size:0.85rem; line-height:2;">
+                    <span class="time-tag">09:00</span> LTC開幕：CAM中央話語<br>
+                    <span class="time-tag">14:00</span> 韓國二代通過式 @316本堂<br>
+                    <span class="time-tag">18:00</span> 李本家烤肉 (發1萬韓幣買隔日早餐)
                 </div>
             </div>
         </section>
 
         <!-- Rooms Page -->
         <section id="rooms" class="page">
-            <div class="section-title">🛌 分房名單</div>
-            <div class="grid-2 grid">
-                <div class="card">
-                    <h4>男生房 301 (合宿)</h4>
-                    <p style="font-size:0.9rem">王男(組)、李男、張男、陳男、林男、曾男</p>
-                </div>
-                <div class="card">
-                    <h4>女生房 201 (三人)</h4>
-                    <p style="font-size:0.9rem">陳女(組)、林女、吳女</p>
-                </div>
+            <div class="section-title">🛌 大屯山飯店分房</div>
+            <div class="card" style="border-top: 6px solid #3b82f6;">
+                <h4 style="margin-top:0;">🔵 雙床房 (男生)</h4>
+                <ul style="font-size:0.9rem; padding:0; list-style:none;">
+                    <li>• 張博閔、謝漢興</li>
+                    <li>• 陳泓霖、林竑堯</li>
+                    <li>• 李易昀、趙宥駿</li>
+                    <li>• 賴敬和、陳子敬</li>
+                    <li>• 林柏儒、謝翔寬、張凱傑 <small>(2/8入住+一床)</small></li>
+                </ul>
+            </div>
+            <div class="card" style="border-top: 6px solid #ec4899;">
+                <h4 style="margin-top:0;">🔴 雙床房 (女生)</h4>
+                <ul style="font-size:0.9rem; padding:0; list-style:none;">
+                    <li>• 胡琬霖、林安楡</li>
+                    <li>• 鄭惠理、黃千芳</li>
+                    <li>• 李沂瑾、王儀安</li>
+                    <li>• 顧國卉、許珮甄</li>
+                    <li>• 陳盈億、王癸雅</li>
+                    <li>• 蕭敏秀、呂亭亭</li>
+                    <li>• 蘇玟琳、陳宜廷</li>
+                </ul>
+            </div>
+            <div class="card" style="border-top: 6px solid #f472b6;">
+                <h4 style="margin-top:0;">💗 兩人房 (一大床)</h4>
+                <ul style="font-size:0.9rem; padding:0; list-style:none;">
+                    <li>• 卓崢雯、王心妤</li>
+                    <li>• 高汝儀、戴若蘭</li>
+                    <li>• 朱汎琳、詹珽雅</li>
+                </ul>
             </div>
         </section>
 
         <!-- Packing Page -->
         <section id="packing" class="page">
-            <div class="section-title">💼 行李清單</div>
+            <div class="section-title">💼 攜帶物品</div>
             <div class="card" style="background:#fef2f2; border:1px solid #fee2e2">
-                <h4 style="color:#dc2626; margin-top:0;">🛑 必帶！</h4>
-                <div class="check-item"><input type="checkbox"> <span>FM 隨身聽 (翻譯用)</span></div>
-                <div class="check-item"><input type="checkbox"> <span>護照正本 (效期半年以上)</span></div>
-                <div class="check-item"><input type="checkbox"> <span>Q-CODE 截圖</span></div>
+                <h4 style="color:#dc2626; margin:0 0 1rem 0;">🛑 必帶！</h4>
+                <div style="font-size:0.85rem; display:grid; gap:0.5rem;">
+                    <label><input type="checkbox"> FM隨身聽 (非手機網路版，需實體天線)</label>
+                    <label><input type="checkbox"> 護照正本 (效期六個月以上)</label>
+                    <label><input type="checkbox"> 網卡或國際漫遊</label>
+                    <label><input type="checkbox"> 主日禮拜正裝</label>
+                </div>
             </div>
-            <div class="grid">
-                <div class="check-item"><input type="checkbox"> <span>主日禮拜正裝</span></div>
-                <div class="check-item"><input type="checkbox"> <span>厚羽絨衣、暖暖包</span></div>
-                <div class="check-item"><input type="checkbox"> <span>220V 轉接頭 (圓孔)</span></div>
+            <div class="card">
+                <h4>🎒 個人生活用品</h4>
+                <div style="font-size:0.85rem; display:grid; grid-template-columns: 1fr 1fr; gap:0.8rem;">
+                    <label><input type="checkbox"> 羽絨套+圍巾</label>
+                    <label><input type="checkbox"> 行動電源</label>
+                    <label><input type="checkbox"> 220V 轉接頭</label>
+                    <label><input type="checkbox"> 個人藥品</label>
+                    <label><input type="checkbox"> 布拖鞋 (進316用)</label>
+                    <label><input type="checkbox"> 600cc以下水瓶</label>
+                </div>
             </div>
         </section>
 
         <!-- Info Page -->
         <section id="info" class="page">
-            <div class="section-title">ℹ️ 重要須知</div>
+            <div class="section-title">🏨 住宿與三溫暖</div>
             <div class="card">
-                <h4>🏨 飯店守則</h4>
-                <ul style="font-size:0.9rem; padding-left:1.2rem">
-                    <li>不提供牙刷牙膏，請自備。</li>
-                    <li>房內禁菸，違者罰 5 萬韓幣。</li>
-                    <li>三溫暖房客優惠 5,000 韓幣。</li>
+                <ul style="font-size:0.85rem; line-height:1.8;">
+                    <li>提供免費WIFI、礦泉水、吹風機。</li>
+                    <li style="color:#dc2626; font-weight:bold;">不提供拋棄式洗漱用品 (牙刷/膏請自備)。</li>
+                    <li>飯店內全面禁菸，違者罰款 5 萬韓幣。</li>
+                    <li><strong>三溫暖：</strong>房客優惠價 5,000 韓幣 (06:00~20:00)。</li>
                 </ul>
             </div>
-            <div class="card" style="background:#fff1f2; color:#9f1239">
-                <h4>🚫 聖地規範</h4>
-                <p style="font-weight:bold">嚴格禁止拍照、攝影！</p>
-                <ul style="font-size:0.9rem; padding-left:1.2rem">
-                    <li>主日請務必穿著正裝。</li>
-                    <li>草坪需脫鞋，禁鋪塑膠墊。</li>
+            <div class="section-title">🚫 聖地禁行區域</div>
+            <div class="card" style="background:#fff1f2; border:1px solid #ffe4e6">
+                <ul style="font-size:0.85rem; color:#9f1239; font-weight:bold;">
+                    <li>嚴格禁止拍照與攝影！</li>
+                    <li>白寶座石頭造景區</li>
+                    <li>禱告山神之路</li>
+                    <li>誕生紀念館旁小路</li>
                 </ul>
             </div>
         </section>
     </main>
 
-    <!-- Mobile Nav -->
     <nav class="mobile-nav">
-        <button class="nav-btn active" onclick="showPage('home')">
-            <span class="nav-icon">🏠</span>概覽
-        </button>
-        <button class="nav-btn" onclick="showPage('schedule')">
-            <span class="nav-icon">📅</span>行程
-        </button>
-        <button class="nav-btn" onclick="showPage('rooms')">
-            <span class="nav-icon">🛌</span>分房
-        </button>
-        <button class="nav-btn" onclick="showPage('packing')">
-            <span class="nav-icon">💼</span>行李
-        </button>
-        <button class="nav-btn" onclick="showPage('info')">
-            <span class="nav-icon">ℹ️</span>須知
-        </button>
+        <button class="nav-btn active" onclick="showPage('home')"><span class="nav-icon">🏠</span>概覽</button>
+        <button class="nav-btn" onclick="showPage('schedule')"><span class="nav-icon">📅</span>行程</button>
+        <button class="nav-btn" onclick="showPage('rooms')"><span class="nav-icon">🛌</span>分房</button>
+        <button class="nav-btn" onclick="showPage('packing')"><span class="nav-icon">💼</span>行李</button>
+        <button class="nav-btn" onclick="showPage('info')"><span class="nav-icon">ℹ️</span>須知</button>
     </nav>
 
     <script>
         function showPage(pageId) {
-            // 切換頁面顯示
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
             document.getElementById(pageId).classList.add('active');
-
-            // 切換導航狀態 (手機 & 電腦)
             document.querySelectorAll('.nav-btn, .sidebar nav button').forEach(b => {
                 b.classList.remove('active');
-                if(b.getAttribute('onclick').includes(pageId)) {
-                    b.classList.add('active');
-                }
+                if(b.getAttribute('onclick').includes(pageId)) b.classList.add('active');
             });
-
-            // 滾動回頂部
             window.scrollTo(0, 0);
         }
-
-        // 行李清單持久化 (簡單功能)
-        document.querySelectorAll('input[type="checkbox"]').forEach((box, idx) => {
-            const key = 'ltc_pack_' + idx;
-            box.checked = localStorage.getItem(key) === 'true';
-            box.onchange = () => localStorage.setItem(key, box.checked);
-        });
     </script>
 </body>
 </html>
