@@ -186,6 +186,31 @@
             .grid-2 { grid-template-columns: 1fr 1fr; }
         }
     </style>
+    <script>
+  function formatDate(date) {
+    const y = date.getFullYear()
+    const m = String(date.getMonth() + 1).padStart(2, '0')
+    const d = String(date.getDate()).padStart(2, '0')
+    const h = String(date.getHours()).padStart(2, '0')
+    const min = String(date.getMinutes()).padStart(2, '0')
+
+    return `${y}.${m}.${d} ${h}:${min}`
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const text = `最後更新 ${formatDate(new Date())}`
+
+    const targets = [
+      document.getElementById('last-updated'),
+      document.getElementById('last-updated-mb')
+    ]
+
+    targets.forEach(el => {
+      if (el) el.textContent = text
+    })
+  })
+</script>
+
 <script type="importmap">
 {
   "imports": {
@@ -201,7 +226,7 @@
     <aside class="sidebar">
         <div style="margin-bottom: 2rem;">
             <h2 style="margin:0; font-weight:900; color:var(--primary);">2026 LTC</h2>
-            <a href="https://drive.google.com/file/d/1JxBQdFuvW_-AtCN9Zb87Hna-WUsUSZG9/view?usp=sharing" target="_blank">📥 下載 PDF</a>
+            <a href="https://drive.google.com/file/d/1LlBreGkt4jjAh7oj9cICjNXDRnmXXiyX/view?usp=sharing" target="_blank">📥 下載 PDF</a>
         </div>
         <nav id="sidebar-nav">
             <button onclick="showPage('home')" class="active">🏠 概覽</button>
@@ -210,16 +235,17 @@
             <button onclick="showPage('packing')">💼 行李</button>
             <button onclick="showPage('info')">ℹ️ 須知</button>
         </nav>
-        <small>最後更新2026.01.22 01:35</small>
+        <small id="last-updated"></small>
     </aside>
 
     <header class="mobile-header">
         <h1>2026 大學部 LTC</h1>
         <div class="header-actions">
             <div class="badge">2/6 ~ 2/9</div>
-            <a href="https://drive.google.com/file/d/1JxBQdFuvW_-AtCN9Zb87Hna-WUsUSZG9/view?usp=sharing" target="_blank" class="download-btn">📥 下載 PDF</a>
+            <a href="https://drive.google.com/file/d/1LlBreGkt4jjAh7oj9cICjNXDRnmXXiyX/view?usp=sharing" target="_blank" class="download-btn">📥 下載 PDF</a>
         </div>
-        <small>最後更新2026.01.22 01:35</small>
+        <br>
+        <small id="last-updated-mb"></small>
 
     </header>
 
@@ -290,7 +316,15 @@
 
             <div class="section-title">🗓️ 詳細行程</div>
             <div class="card">
+                <h4 style="color:var(--primary); margin:0 0 1rem 0;">置物櫃(2/6-2/8) </h4>
+
+                <div style="font-size:1rem; line-height:2;"> 總共 11個
+                    <br>男生:４個(2人*2個、3人*2個)<br>女生:７個(2人*1個、3人*6個)
+                </div>
+            </div>
+            <div class="card">
                 <h4 style="color:var(--primary); margin:0 0 1rem 0;">2/6 (五) </h4>
+
                 <div style="font-size:1rem; line-height:2;">
                     <span class="time-tag">07:30</span> 上巴士出發<br>
                     <span class="time-tag">09:00</span> 抵達月明洞<br>
@@ -304,7 +338,7 @@
                 <h4 style="color:var(--primary); margin:0 0 1rem 0;">2/7 (六) </h4>
                 <div style="font-size:1rem; line-height:2;">
                     <span class="time-tag">07:00-08:00</span> 大芚山飯店早餐<br>
-                    <span class="time-tag">08:15</span> 出發前往月明洞<br>LTC開幕/CAM中央話語 < campus指導者教育 > 鄭鑽石牧師<br>
+                    <span class="time-tag">08:15</span> 出發前往月明洞<br>
                     <span class="time-tag">09:00</span> 彩排&預備<br>
                     <span class="time-tag">09:30</span> LTC靈修2 < campus指導者教育 > 鄭鑽石牧師<br>
                     <span class="time-tag">12:00</span> 午餐 真美便當@316餐廳<br>
