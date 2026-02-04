@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,10 @@
             --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
         }
 
-        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -72,8 +75,12 @@
             border-radius: 0 0 2.5rem 2.5rem;
         }
 
-        header h1 { margin: 0; font-size: 1.6rem; font-weight: 900; }
-        
+        header h1 {
+            margin: 0;
+            font-size: 1.6rem;
+            font-weight: 900;
+        }
+
         .header-actions {
             display: flex;
             justify-content: center;
@@ -113,12 +120,25 @@
             padding-bottom: 140px;
         }
 
-        .page { display: none; animation: fadeIn 0.4s ease-out forwards; }
-        .page.active { display: block; }
+        .page {
+            display: none;
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+
+        .page.active {
+            display: block;
+        }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .card {
@@ -141,8 +161,14 @@
             border-radius: 1.2rem;
         }
 
-        .grid { display: grid; gap: 1rem; }
-        .grid-2 { grid-template-columns: 1fr; }
+        .grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .grid-2 {
+            grid-template-columns: 1fr;
+        }
 
         .time-tag {
             font-family: monospace;
@@ -153,13 +179,29 @@
             border-radius: 0.4rem;
         }
 
-        .table { width: 100%; border-collapse: collapse; font-size: 1rem; }
-        .table th, .table td { padding: 0.75rem; border-bottom: 1px solid #f1f5f9; text-align: left; }
-        .table th { color: var(--text-light); font-weight: 900; }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1rem;
+        }
+
+        .table th,
+        .table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #f1f5f9;
+            text-align: left;
+        }
+
+        .table th {
+            color: var(--text-light);
+            font-weight: 900;
+        }
 
         .mobile-nav {
             position: fixed;
-            bottom: 0; left: 0; right: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
             background: rgba(255, 255, 255, 0.98);
             display: flex;
             justify-content: space-around;
@@ -167,28 +209,58 @@
             border-top: 1px solid #e2e8f0;
             border-radius: 2.5rem 2.5rem 0 0;
             z-index: 1000;
-            box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);
         }
 
         .nav-btn {
-            background: none; border: none; color: var(--text-light);
-            display: flex; flex-direction: column; align-items: center;
-            font-size: 0.7rem; font-weight: 900; cursor: pointer; width: 20%;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.7rem;
+            font-weight: 900;
+            cursor: pointer;
+            width: 20%;
         }
-        .nav-btn.active { color: var(--primary); }
-        .nav-icon { font-size: 1.4rem; margin-bottom: 0.2rem; }
+
+        .nav-btn.active {
+            color: var(--primary);
+        }
+
+        .nav-icon {
+            font-size: 1.4rem;
+            margin-bottom: 0.2rem;
+        }
 
         @media (min-width: 768px) {
-            body { flex-direction: row; }
-            .sidebar { display: flex; }
-            .mobile-header, .mobile-nav { display: none; }
-            main { margin-left: 260px; padding: 3rem; }
-            .grid-2 { grid-template-columns: 1fr 1fr; }
+            body {
+                flex-direction: row;
+            }
+
+            .sidebar {
+                display: flex;
+            }
+
+            .mobile-header,
+            .mobile-nav {
+                display: none;
+            }
+
+            main {
+                margin-left: 260px;
+                padding: 3rem;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr 1fr;
+            }
         }
     </style>
 
-<script>
-  const BUILD_UPDATED_AT = "2026.02.03 21:26"
+    <script>
+        const BUILD_UPDATED_AT = "2026.02.05 0:10"
 
   document.addEventListener('DOMContentLoaded', () => {
     const text = `最後更新 ${BUILD_UPDATED_AT}`
@@ -201,9 +273,9 @@
       if (el) el.textContent = text
     })
   })
-</script>
-<script type="importmap">
-{
+    </script>
+    <script type="importmap">
+        {
   "imports": {
     "react": "https://esm.sh/react@^19.2.3",
     "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
@@ -212,16 +284,20 @@
 }
 </script>
 </head>
+
 <body>
 
     <aside class="sidebar">
         <div style="margin-bottom: 2rem;">
             <h2 style="margin:0; font-weight:900; color:var(--primary);">2026 LTC</h2>
-            <a href="https://drive.google.com/file/d/1XM5ryYWPulKPLKw6X_Oo07qqOBhvCksy/view?usp=sharing" target="_blank">📥 下載 PDF</a>
+            <a href="https://drive.google.com/file/d/1XM5ryYWPulKPLKw6X_Oo07qqOBhvCksy/view?usp=sharing"
+                target="_blank">📥 下載 PDF</a>
         </div>
         <nav id="sidebar-nav">
             <button onclick="showPage('home')" class="active">🏠 概覽</button>
             <button onclick="showPage('schedule')">📅 行程</button>
+            <button onclick="showPage('meeting')">🌟 聚會</button>
+            <button onclick="showPage('song')">🎤 歌單</button>
             <button onclick="showPage('rooms')">🛌 分房</button>
             <button onclick="showPage('packing')">💼 行李</button>
             <button onclick="showPage('info')">ℹ️ 須知</button>
@@ -233,7 +309,8 @@
         <h1>2026 大學部 LTC</h1>
         <div class="header-actions">
             <div class="badge">2/6 ~ 2/9</div>
-            <a href="https://drive.google.com/file/d/1XM5ryYWPulKPLKw6X_Oo07qqOBhvCksy/view?usp=sharing" target="_blank" class="download-btn">📥 下載 PDF</a>
+            <a href="https://drive.google.com/file/d/1XM5ryYWPulKPLKw6X_Oo07qqOBhvCksy/view?usp=sharing" target="_blank"
+                class="download-btn">📥 下載 PDF</a>
         </div>
         <br>
         <small id="last-updated-mb"></small>
@@ -262,18 +339,66 @@
             <div class="section-title">👥 分工介紹</div>
             <div class="card">
                 <table class="table">
-                    <tr><th style="width: 30%">項目</th><th style="width: 33%">人員</th><th>負責事項</th></tr>
-                    <tr><td>正/副領隊</td><td>胡琬霖、主真實</td><td>行政統籌</td></tr>
-                    <tr><td>財務</td><td>黃千芳</td><td>零用錢、信封袋、計算機、保險</td></tr>
-                    <tr><td>車康</td><td>豆豆</td><td>點名/帶分享</td></tr>
-                    <tr><td>車上讚美</td><td>若蘭</td><td></td></tr>
-                    <tr><td>醫療組</td><td>許珮甄</td><td>外傷消毒包紮/腸胃藥品/感冒止痛藥品/暈車藥/喉糖</td></tr>
-                    <tr><td>歷史紀錄部</td><td>王儀安</td><td></td></tr>
-                    <tr><td>發射器</td><td>主真實</td><td>廣播發射器</td></tr>
-                    <tr><td>大執負責人</td><td>謝漢興</td><td>準備垃圾袋（跟愛門姐買）、提醒值日生</td></tr>
-                    <tr><td>翻譯官</td><td>鄭惠理</td><td></td></tr>
-                    <tr><td>生活翻譯</td><td>蘇玟琳</td><td></td></tr>
-                    <tr><td>美術</td><td>卓竫雯</td><td></td></tr>
+                    <tr>
+                        <th style="width: 30%">項目</th>
+                        <th style="width: 33%">人員</th>
+                        <th>負責事項</th>
+                    </tr>
+                    <tr>
+                        <td>正/副領隊</td>
+                        <td>胡琬霖、主真實</td>
+                        <td>行政統籌</td>
+                    </tr>
+                    <tr>
+                        <td>財務</td>
+                        <td>黃千芳</td>
+                        <td>零用錢、信封袋、計算機、保險</td>
+                    </tr>
+                    <tr>
+                        <td>車康</td>
+                        <td>豆豆</td>
+                        <td>點名/帶分享</td>
+                    </tr>
+                    <tr>
+                        <td>車上讚美</td>
+                        <td>若蘭</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>醫療組</td>
+                        <td>許珮甄</td>
+                        <td>外傷消毒包紮/腸胃藥品/感冒止痛藥品/暈車藥/喉糖</td>
+                    </tr>
+                    <tr>
+                        <td>歷史紀錄部</td>
+                        <td>王儀安</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>發射器</td>
+                        <td>主真實</td>
+                        <td>廣播發射器</td>
+                    </tr>
+                    <tr>
+                        <td>大執負責人</td>
+                        <td>謝漢興</td>
+                        <td>準備垃圾袋（跟愛門姐買）、提醒值日生</td>
+                    </tr>
+                    <tr>
+                        <td>翻譯官</td>
+                        <td>鄭惠理</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>生活翻譯</td>
+                        <td>蘇玟琳</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>美術</td>
+                        <td>卓竫雯</td>
+                        <td></td>
+                    </tr>
                 </table>
             </div>
 
@@ -296,6 +421,7 @@
                     <strong>2/6 (五) 02:35 - 05:45</strong><br>
                     桃園 (TPE) → 清洲 (CJJ)<br>
                     <small style="color:#dc2626; font-weight:bold;">⚠️ 2/5 23:15 桃機一航集合</small>
+
                 </div>
                 <div class="card">
                     <span class="badge" style="background:#f59e0b">回程 ZE781</span><br><br>
@@ -332,12 +458,12 @@
                     <span class="time-tag">07:00-08:00</span> 大芚山飯店早餐<br>
                     <span class="time-tag">08:15</span> 出發前往月明洞<br>
                     <span class="time-tag">09:00</span> 彩排&預備<br>
-                    <span class="time-tag">09:30</span> LTC靈修2 < campus指導者教育 > 鄭鑽石牧師 @中講堂<br>
-                    <span class="time-tag">12:00</span> 午餐 真美便當@316餐廳<br>
-                    <span class="time-tag">14:00-17:00(暫定)</span> 韓國二代通過式@316本堂 結束集合下山<br>
-                    <span class="time-tag">18:00</span> 晚餐 李本家烤肉<br>
-                    <span class="time-tag">19:30</span> 逛超商買早餐<br>
-                    <span class="time-tag">20:30</span> 回大芚山飯店
+                    <span class="time-tag">09:30</span> LTC靈修2 < campus指導者教育> 鄭鑽石牧師 @中講堂<br>
+                        <span class="time-tag">12:00</span> 午餐 真美便當@316餐廳<br>
+                        <span class="time-tag">14:00-17:00(暫定)</span> 韓國二代通過式@316本堂 結束集合下山<br>
+                        <span class="time-tag">18:00</span> 晚餐 李本家烤肉<br>
+                        <span class="time-tag">19:30</span> 逛超商買早餐<br>
+                        <span class="time-tag">20:30</span> 回大芚山飯店
                 </div>
             </div>
             <div class="card">
@@ -349,10 +475,10 @@
                     <span class="time-tag">09:20</span> 入本堂主日禮拜（主日後龍錫牧師打招呼）<br>
                     <span class="time-tag">12:30</span> 午餐 真的便當@316餐廳<br>
                     <span class="time-tag">14:00</span> 彩排&預備<br>
-                    <span class="time-tag">14:20-17:00</span>  LTC靈修3 <二代教育分享> 韓國二代中央 @中講堂 結束集合下山<br>
-                    <span class="time-tag">18:00</span> 晚餐 火烤小章魚<br>
-                    <span class="time-tag">20:00</span> 逛超商<br>
-                    <span class="time-tag">20:30</span> 回大芚山飯店
+                    <span class="time-tag">14:20-17:00</span> LTC靈修3 <二代教育分享> 韓國二代中央 @中講堂 結束集合下山<br>
+                        <span class="time-tag">18:00</span> 晚餐 火烤小章魚<br>
+                        <span class="time-tag">20:00</span> 逛超商<br>
+                        <span class="time-tag">20:30</span> 回大芚山飯店
                 </div>
             </div>
             <div class="card">
@@ -365,11 +491,409 @@
                     <span class="time-tag">12:30</span> 午餐 燒烤窮童叔叔<br>
                     <span class="time-tag">14:00-17:00</span> 韓南大學校園導覽<br>
                     <span class="time-tag">17:30</span> 晚餐 自理＠韓南大學附近餐廳<br>
-                    <span class="time-tag">19:30</span> 出發前往機場 
+                    <span class="time-tag">19:30</span> 出發前往機場
                     <small>回程：易斯達23:45-01:15(+1)</small>
-                  
+
                 </div>
             </div>
+        </section>
+
+        <!-- Meeting Page -->
+        <section id="meeting" class="page">
+            <div class="section-title">🌟 聚會行程</div>
+            <div class="card">
+                <h4 style="color:var(--primary); margin:0 0 1rem 0;">2/6 台韓交流流程 </h4>
+
+                <span class="badge" style="background:#10b981">彩排</span><br><br>
+                <div style="font-size:1rem; line-height:2;">
+                    <span class="time-tag">13:00-13:15</span> 讚美彩排2首（台灣校園5名）<br>
+                    <span class="time-tag">13:15-13:25</span> 見證者彩排（台灣校園、梨大）<br>
+                    <span class="time-tag">13:25-13:30</span> 司會彩排（김다희）<br><br>
+                </div>
+
+                <span class="badge" style="background:#f59e0b">第一天 @中講堂</span><br><br>
+
+                <div style="font-size:1rem; line-height:2;">
+                    <span class="time-tag">12:30 ~</span> 入場<br>
+                    <span class="time-tag">~ 13:00</span> 就座完成過會場整頓<br>
+                    <span class="time-tag">13:30</span> 等待畫面<br>
+                    <span class="time-tag">13:30-13:40</span> 預備讚美2首(1. 我們的果實、2. 為了誰而來 請參考PalmPlus預備讚美版)<br>
+                    <span class="time-tag">13:40-13:45</span> 司會（김다희）<br>
+                    <span class="time-tag">13:45-13:55</span> 見證 - 台灣（台大李易昀弟兄）<br>
+                    <span class="time-tag">13:55-14:00</span> 司會（김다희）<br>
+                    <span class="time-tag">14:00-14:10</span> 見證 - 韓國（梨大정재원）<br>
+                    <span class="time-tag">14:10-14:15</span> 司會（김다희）<br>
+                    <span class="time-tag">14:15-16:00</span> 分組交流 <a
+                        href="https://docs.google.com/spreadsheets/d/16Cm4h2bNtWrmko9NTTx3t-4tP6BnRN4ykfVGeJDFTzc/edit?usp=sharing"
+                        target="_blank">參考分組名單</a> <br>
+                </div>
+            </div>
+            <div class="card">
+                <h4 style="color:var(--primary); margin:0 0 1rem 0;">2/7 CAM指導者教育（鄭鑽石牧師） </h4>
+
+                <span class="badge" style="background:#10b981">彩排</span><br><br>
+                <div style="font-size:1rem; line-height:2;">
+                    <span class="time-tag">09:10-09:25</span> 讚美彩排2首（台灣校園5名）<br>
+                    <span class="time-tag">09:25-09:30</span> 鑽石牧師彩排<br>
+                    <span class="time-tag">09:30-09:33</span> 司會彩排<br><br>
+                </div>
+
+                <span class="badge" style="background:#f59e0b">第二天 @中講堂</span><br><br>
+
+                <div style="font-size:1rem; line-height:2;">
+                    <span class="time-tag">-</span> 入場<br>
+                    <span class="time-tag">-</span> 就座完畢及場內整理<br>
+                    <span class="time-tag">-</span> 待機畫面<br>
+                    <span class="time-tag">10:00-10:10</span> 預備讚美2首(<a
+                        href="https://youtu.be/MohwKMhoOFE?si=16U7LCi3TOvJqPA1" target="_blank">1. 良人如同太陽</a><a
+                        href="https://youtu.be/8wm-_4BKb0Q?si=d42OWHIZSpIkdxjL" target="_blank">2. 愛之道路</a>)<br>
+                    <span class="time-tag">10:10-10:15</span> 司會<br>
+                    <span class="time-tag">10:15-11:45</span> 教育話語（韓國校園中央 鑽石牧師）/聖經奉讀（김다희）<br>
+                    <span class="time-tag">11:45-11:50</span> 司會結尾（台灣）<br>
+                    <span class="time-tag">11:50-11:55</span> 拍照留念<br>
+                </div>
+            </div>
+        </section>
+
+        <!-- Song Page -->
+        <section id="song" class="page">
+            <div class="section-title">🎤 歌單與歌詞參考</div>
+            <div class="grid">
+                <div class="card" style="border-left: 8px solid #6366f1;">
+                    2/6韓文讚美：
+                    (參考PalmPlus預備讚美版)
+                    <ul>
+
+                        <li>1. H78 我們的果實</li>
+                        <li>2. H13 為了誰而來</li>
+                    </ul>
+                </div>
+                <div class="grid-2 grid">
+                    <div class="card">
+                        <h4 style="margin:0 0 1rem 0;">H78 我們的果實 </h4>
+
+                        走吧 向前奔跑<br>
+                        가자 달려가자<br>
+                        過往歲月 全都當成-借鏡<br>
+                        지난 세월 모두 거울을 삼고<br>
+                        領受 滿滿力量<br>
+                        힘을 받으면서<br>
+                        穩穩地扎根<br>
+                        뿌리를 삼고<br>
+                        延伸出枝子<br>
+                        가지를 삼고<br>
+                        一直到 結出果實<br>
+                        열매를 맺기까지<br>
+                        就如同 那花朵 在和煦的春天盛開<br>
+                        화창한 봄날에 피어나는 꽃과 같이<br><br>
+
+                        走吧 向前奔跑<br>
+                        가자 달려가자<br>
+                        過往歲月 全都當成-借鏡<br>
+                        지난 세월 모두 거울을 삼고<br>
+                        領受 滿滿力量<br>
+                        힘을 받으면서<br>
+                        穩穩地扎根<br>
+                        뿌리를 삼고<br>
+                        延伸出枝子<br>
+                        가지를 삼고<br>
+                        一直到 結出果實<br>
+                        열매를 맺기까지<br>
+                        就如同 那花朵 在和煦的春天盛開<br>
+                        화창한 봄날에 피어나는 꽃과 같이<br><br>
+
+                        * 綻放嬌豔芬芳 美麗的生活之花<br>
+                        * 아름다운 삶의 꽃을 피워야 한다<br>
+                        唯～有這樣 等到秋天來臨<br>
+                        그래야만이 가을이 되면은<br>
+                        才能結出 美好果實<br>
+                        아름다운 열매 열매<br>
+                        耶和華 觀看之後<br>
+                        하나님 보시고서<br>
+                        與聖靈一起<br>
+                        성령님 함께<br>
+                        將我們的果實 採收後帶走<br>
+                        우리의 열매를 취하신단다<br>
+                        是真愛的果實<br>
+                        사랑의 열매요<br>
+                        是智慧的果實啊 *<br>
+                        지혜의 열매여라 *<br><br>
+
+                        (間奏)<br>
+                        (간주)<br><br>
+
+                        * 綻放嬌豔芬芳 美麗的生活之花<br>
+                        * 아름다운 삶의 꽃을 피워야 한다<br>
+                        唯～有這樣 等到秋天來臨<br>
+                        그래야만이 가을이 되면은<br>
+                        才能結出 美好果實<br>
+                        아름다운 열매 열매<br>
+                        耶和華 觀看之後<br>
+                        하나님 보시고서<br>
+                        與聖靈一起<br>
+                        성령님 함께<br>
+                        將我們的果實 採收後帶走<br>
+                        우리의 열매를 취하신단다<br>
+                        是真愛的果實<br>
+                        사랑의 열매요<br>
+                        是智慧的果實啊 *<br>
+                        지혜의 열매여라 *<br><br>
+
+                        # 是真愛的果實<br>
+                        # 사랑의 열매요<br>
+                        是智慧的果實啊<br>
+                        지혜의 열매여라<br>
+
+                    </div>
+                    <div class="card">
+                        <h4 style="margin:0 0 1rem 0;">H13 為了誰而來 </h4>
+                        我- 究竟是為了誰 為誰而來到這世上<br>
+                        나는 세상에 온 것은 누구를 위해 왔느냐<br>
+                        我究竟又會 為了誰- 為誰而敲響鐘聲<br>
+                        누구를 위해 내가 종을 울리겠느냐<br>
+                        我是為了 相信並愛我 如此生活的人們<br>
+                        나를 믿고 사랑하며 산 자들이다<br><br>
+
+                        我- 究竟是為了誰 為誰而來到這世上<br>
+                        나는 세상에 온 것은 누구를 위해 왔느냐<br>
+                        我究竟又會 為了誰- 為誰而敲響鐘聲<br>
+                        누구를 위해 내가 종을 울리겠느냐<br>
+                        我是為了 相信並愛我 如此生活的人們<br>
+                        나를 믿고 사랑하며 산 자들이다<br><br>
+
+                        我毫無遺憾 重新 再來過<br>
+                        미련도 없이 다시 할 것을<br>
+                        也完全 不加思索<br>
+                        생각도 하지 않고<br>
+                        一瞬間 一口氣 揮一刀<br>
+                        한 번에 단 번에 단 칼에<br>
+                        我毫無迷戀 揮得乾淨俐落<br>
+                        미련도 없이 휘둘렀으니<br>
+                        從東方 到西方<br>
+                        동에서 서까지<br>
+                        從南方 到北方<br>
+                        남에서 북까지<br>
+                        閃電一般<br>
+                        번개같이<br>
+                        屬天的 寶劍和話語 長而又長<br>
+                        길고 긴 하늘의 검을 말씀을<br>
+                        我一口氣 俐落地揮下<br>
+                        단번에 휘둘르었다<br><br>
+
+                        (間奏)<br>
+                        (간주)<br><br>
+
+                        要瞭解 也要體會<br>
+                        알아야 한다 깨달아야 한다<br>
+                        要相信 並跟隨<br>
+                        믿고서 따르라<br>
+                        千真萬確 這歷史<br>
+                        틀림없는 역사다<br>
+                        就是 我!<br>
+                        나다!  나!<br>
+                        時間 正在流逝 相信吧<br>
+                        믿고 부지런히 따르라<br>
+                        勤勞地跟隨吧<br>
+                        시간이 간다<br>
+                        時間一旦流逝 就無法再掌握<br>
+                        한번 가는 시간 잡을 수가 없고<br>
+                        已逝去的過往時光<br>
+                        다시는 지난 시간은<br>
+                        全都是- 死亡時間<br>
+                        죽은 죽은 시간이다<br>
+                        來打造 來造就 永恆歷史<br>
+                        영원한 역사를 만들어라<br>
+                        來～創造吧<br>
+                        창조하여라<br>
+                        主耶和華 不會瞄向別處<br>
+                        주 하나님 눈도 팔지 않고<br>
+                        火焰般的那眼神<br>
+                        불꽃같은 눈으로<br>
+                        會定睛注視我～們<br>
+                        우리를 쳐다보신다<br><br>
+
+                        我愛你們<br>
+                        사랑한다<br>
+                        你們要付諸行動<br>
+                        너희가 해야 한다<br>
+                    </div>
+                </div>
+                <div class="card" style="border-left: 8px solid #6366f1;">
+                    2/7中文讚美：
+                    <ul>
+
+                        <li>1. H-036 良人如同太陽<a href="https://youtu.be/MohwKMhoOFE?si=16U7LCi3TOvJqPA1"
+                                target="_blank">Youtube</a></li>
+                        <li>2. H-001 愛之道路<a href="https://youtu.be/8wm-_4BKb0Q?si=d42OWHIZSpIkdxjL"
+                                target="_blank">Youtube</a></li>
+                    </ul>
+                </div>
+                    <div class="grid-2 grid">
+                        <div class="card">
+                            <h4 style="margin:0 0 1rem 0;">H36 良人如同太陽 </h4>
+
+                            太陽升起 那海灘上<br>
+                            與聖靈～一起<br>
+                            與我良人一起<br>
+                            如同 遠處冉冉升起 那太陽一般<br>
+                            我的主啊 如同太陽<br>
+                            如同陽光<br>
+                            清晰又明亮 耀眼燦爛<br>
+                            我也 與良人一起<br>
+                            與良人一起<br>
+                            跟隨他 清晰又燦爛地<br>
+                            度過～在世上的生活<br>
+                            我良人就如 那燦爛的太陽一般<br>
+                            如同陽光<br>
+                            實在是 真的是 確實是這樣<br><br>
+
+                            (間奏)<br><br>
+
+                            我良人 今天也成為我的喜悅<br>
+                            成為我的希～望<br>
+                            良人唷<br>
+                            我良人唷<br>
+                            他總是 陪在我身邊<br>
+                            面帶微笑 給予我教導<br>
+                            牽起我手<br>
+                            也牽動我的內心<br>
+                            不論相隔多遙遠<br>
+                            或近在眼～前<br>
+                            良人 良人 都是我的希望<br>
+                            成為我的喜悅<br>
+                            他-就是我的真愛<br>
+                            無需贅述 任何的言語<br><br>
+
+                            單單跟隨良人 愛著良人<br>
+                            不斷地展現出 愛的反應<br>
+                            就是 我的全～部<br>
+                            從現在起 直到永遠<br>
+                            直到永遠 我都會跟隨<br>
+                            願能跟隨直到 黃金天國<br><br>
+
+                            今天也 與聖靈一起- 與神一起<br>
+                            也與主一起一起 向前行<br>
+                            如此來生活<br>
+                            帥氣地 有趣地<br>
+                            喜悅地 充滿真愛情<br>
+
+                        </div>
+                        <div class="card">
+                            <h4 style="margin:0 0 1rem 0;">H01 愛之道路 </h4>
+                            我已來了 你也來了<br>
+                            在今天 我-們 也與神 與聖靈 成為一體<br>
+                            攜手同行 這就是 永恆的 愛之道路<br><br>
+
+                            絲毫不改變<br>
+                            言語 無法道盡<br>
+                            攝理的道路 總充滿 自負心<br>
+                            也充滿希～望<br>
+                            太陽一般 燦爛發光<br>
+                            我們的永恆真愛<br><br>
+
+                            * 到最後 那旨意 終於達成實現<br>
+                            主耶和華 永恆的那約定<br>
+                            今天也不改變 絲毫都不改變 *<br><br>
+
+                            （間奏）<br><br>
+
+                            * 到最後 那旨意 終於達成實現<br>
+                            主耶和華 永恆的那約定<br>
+                            今天也不改變 絲毫都不改變 *<br><br>
+
+                            我已來了 你也來了<br>
+                            在今天 我-們 也與神 與聖靈 成為一體<br>
+                            攜手同行 這就是 永恆的 愛之道路<br>
+                        </div>
+                    </div>
+                    <div class="card" style="border-left: 8px solid #6366f1;">
+                        2/8中文讚美：
+                        <ul>
+
+                            <li>1. H-101 我主是答案<a href="https://youtu.be/kDv57kBCTQA?si=bHENYekzO3Owtnt_"
+                                    target="_blank">Youtube</a></li>
+                            <li>2. H-174 你會興盛順利又亨通<a href="https://www.youtube.com/watch?v=U9zWnhGdwtU"
+                                    target="_blank">Youtube</a></li>
+                        </ul>
+                    </div>
+                    <div class="grid-2 grid">
+                        <div class="card">
+                            <h4 style="margin:0 0 1rem 0;">H101 我主是答案 </h4>
+                            世上生活 萬事萬物<br>
+                            各樣問題 令人好奇<br>
+                            許多事 不可思議<br>
+                            有誰能給予答案 讓人內心舒暢<br><br>
+
+                            * 耶和華差派的 人類的救援者<br>
+                            我主是答案<br>
+                            答案就是他<br><br>
+
+                            耶和華會透過他<br>
+                            來～解決 世上大大小小 所有問題<br>
+                            也展開 神所定下的旨意<br>
+                            你是否明白這一切<br>
+                            相信並跟隨的眾多人們 已體會也瞭解<br>
+                            沒錯 沒錯<br>
+                            我的主 就是答案 *<br><br>
+
+                            (間奏)<br><br>
+
+                            * 耶和華差派的 人類的救援者<br>
+                            我主是答案<br>
+                            答案就是他<br><br>
+
+                            耶和華會透過他<br>
+                            來～解決 世上大大小小 所有問題<br>
+                            也展開 神所定下的旨意<br>
+                            你是否明白這一切<br>
+                            相信並跟隨的眾多人們 已體會也瞭解<br>
+                            沒錯 沒錯<br>
+                            我的主 就是答案 *<br><br>
+
+                            不論誰 說了些什麼<br>
+                            那些答案 無法讓人內心舒暢<br>
+                            全能的神耶和華 使用的那身軀<br>
+                            我的主是答案<br>
+                            主就是答～案<br>
+                            神會透過他 讓人們 按旨意去行動<br>
+                            藉此讓人們 體會答案<br><br>
+
+                            # 我主是答案 (x5)<br>
+                        </div>
+                        <div class="card">
+                            <h4 style="margin:0 0 1rem 0;">H174 你會興盛順利又亨通 </h4>
+                            耶和華- 就是我的力量 就是我的能力<br><br>
+
+                            聖-靈 聖～子 就是我～的-愛<br>
+                            我的話～語<br>
+                            就是我的力量～ 我的力量<br><br>
+
+                            全知全能的神 耶和華 如此對我說-<br>
+                            你要發出力-量 如我所造 天上太陽<br>
+                            也如月亮 發出你的力量<br><br>
+
+                            （合唱）<br>
+                            我力量 我的能力<br>
+                            我的愛～ 我的話語<br>
+                            就是全知全能神 我的耶和華<br>
+                            我力量 全能神耶和華<br>
+                            我力量 全能神耶和華<br><br>
+
+                            你真的要 真的要<br>
+                            將你力量 能力 完全傾注在我身上<br><br>
+
+                            你真的要 真的要 傾注在我身上<br>
+                            (我的全能神耶和華 我的耶和華)<br>
+                            你會 你會興-盛 順利又亨通<br><br>
+
+                            耶和華- 就是我的力量 就是我的能力<br>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
         </section>
 
         <!-- Rooms Page -->
@@ -421,6 +945,8 @@
             <div class="card">
                 <h4>🎒 個人生活用品</h4>
                 <div style="font-size:1rem; display:grid; grid-template-columns: 1fr 1fr; gap:0.8rem;">
+                    <label><input type="checkbox">主日禮拜正裝
+                    <small style="color:#dc2626; font-weight:bold;"><br>服裝預備：男生-寶藍色、女生-白或米白色</small></label>
                     <label><input type="checkbox"> 個人藥品（防蚊藥、胃藥、止痛藥、暈機暈車藥、綜合維他命等）</label>
                     <label><input type="checkbox">錢包、零用錢(韓)</label>
                     <label><input type="checkbox">雨傘、雨衣</label>
@@ -437,14 +963,23 @@
                     <label><input type="checkbox">筆記本、筆</label>
                     <label><input type="checkbox">小而輕可以填飽的食物</label>
                     <label><input type="checkbox">裝山泉水空瓶(容量600cc以下，數量不限）</label>
-                    <label><input type="checkbox">主日禮拜正裝</label>
-                   
+
+
                 </div>
             </div>
         </section>
 
         <!-- Info Page -->
         <section id="info" class="page">
+            <div class="section-title" style="background-color: #dc2626"> 月明洞境內的影片、照片事項</div>
+            <div class="card">
+                <div style="font-size:1rem; line-height:1.8;">
+                    聖徒們為了作爲紀念以靈修園為背景拍攝，但是個人拍攝的影片和照片與原本用意不同，有被惡意利用的事件發生。<br><br>
+                    因此月明洞內的影片、以及相片須<span style=" font-weight: bold;">以團體照爲中心，至於個人照需以人物爲中心拍照</span>，<span style="color: #dc2626; font-weight: bold;">禁止拍攝作品</span>。<br><br>
+                    目前月明洞雖然開放拍照，不要拍到作品之外，其他人物照可以拍照，但請拍完自己保存或是在教會分享，<span style="color: #dc2626; font-weight: bold;">請不要上傳社群媒體喔</span>，<span style="font-weight: bold;">到目前為止，月明洞都沒有開放任何照片可以上傳社群媒體，這點請大家務必遵守!</span><br><br>
+                     神開放讓我們拍照，這是很大的恩典，希望大家一起守護聖殿的權威，謝謝。
+                </div>
+            </div>
             <div class="section-title"> 大芚山住宿：提供設施與注意事項</div>
             <div class="card">
                 <ul style="font-size:1rem; line-height:1.8;">
@@ -462,82 +997,85 @@
                     <li>地點：飯店B1</li>
                     <li>費用：原價韓幣 10,000元，入住房客半價優惠 韓幣5,000元</li>
                     <li>開放時間：06:00~20:00(最開開放入場時間為 19:00)</li>
-      
+
                 </ul>
             </div>
             <div class="section-title"> 月明洞拍照事項公告</div>
             <div class="card">
-                
 
-                  
-                    <ul style="font-size:1rem; line-height:1.8;">
-                  
-                   <li style="font-size:1rem; line-height:1.8;">從現在開始~於月明洞境內 
-                    <span style="color:#dc2626; font-weight:bold;">禁止個人&團體照片 拍攝以及攝影！</span>
-                    <br>因為有人惡意和不當使用在月明洞境內為背景的照片和影片。
-                    如果看見會員在拍照和攝影的話，請拜託幫忙勸誘以及制止！</li>
-      
+
+
+                <ul style="font-size:1rem; line-height:1.8;">
+
+                    <li style="font-size:1rem; line-height:1.8;">從現在開始~於月明洞境內
+                        <span style="color:#dc2626; font-weight:bold;">禁止個人&團體照片 拍攝以及攝影！</span>
+                        <br>因為有人惡意和不當使用在月明洞境內為背景的照片和影片。
+                    如果看見會員在拍照和攝影的話，請拜託幫忙勸誘以及制止！
+                    </li>
+
                 </ul>
-                 
+
             </div>
             <div class="section-title"> 月明洞禁行區域公告</div>
             <div class="card">
-                 
-                
-                    <ul style="font-size:1rem; line-height:1.8;">
-                   <p style="color:#dc2626; font-weight:bold;">（注意）以下三個區域『不開放』行走！</p>
+
+
+                <ul style="font-size:1rem; line-height:1.8;">
+                    <p style="color:#dc2626; font-weight:bold;">（注意）以下三個區域『不開放』行走！</p>
                     <li> 白寶座的石頭造景（只可以走橫的那條已經開好，直通神的瀑布的路，不可以在石頭間攀爬）</li>
                     <li> 禱告山神之路</li>
                     <li>誕生紀念館旁邊的小路</li>
-      
+
                 </ul>
-                 
+
             </div>
             <div class="section-title"> 月明洞其他注意事項</div>
             <div class="card">
-                 
-                
-                    <ul style="font-size:1rem; line-height:1.8;">
-            <li>草坪旁的山泉水，請勿使用兩公升以上的瓶子盛裝。</li>
-<li>建議使用600cc的寶特瓶或個人中小容器盛裝。（瓶數不限）</li>
-<li>用餐場所：316館1樓餐廳（事先預約）、其他戶外也可以。</li>
-<li>清算館咖啡廳（AM10點開門，週三公休）</li>
-<small>*有販售飲料、泡麵、禁用外食，請大家做好垃圾分類！</small><br>
-<small>*清算館咖啡廳只允許於那裡購買的飲料或是食物的垃圾</small><br>
-<small>*有販售少量紀念品*清算館廁所：只有星期六&日開放。（男女廁所皆有哺乳室）</small>
-<li>請盡量不要隨意進出月明洞辦公室，有事請先聯絡愛門講道師。</li>
-<li>請不要隨意跑上去青瓦屋。</li>
-<li>請不要在聖子石及野心作前禱告。</li>
-<li>請不要在石頭造景之間攀爬行走。（有跌落之危險，請使用已開發好的路。）</li>
-<li>請不要獨自前往迴谷、橄欖山八角亭、克己峰、城隍堂小路（有成群山豬出沒）。</li>
-<li>下雨天或是下大雪時，請不要走在運動場的內圈（避免泥濘）➡請使用運動場外圈的路面行走。</li>
-<li>請不要觸摸青瓦屋一帶的鐘乳石及石頭座椅。</li>
-      
+
+
+                <ul style="font-size:1rem; line-height:1.8;">
+                    <li>草坪旁的山泉水，請勿使用兩公升以上的瓶子盛裝。</li>
+                    <li>建議使用600cc的寶特瓶或個人中小容器盛裝。（瓶數不限）</li>
+                    <li>用餐場所：316館1樓餐廳（事先預約）、其他戶外也可以。</li>
+                    <li>清算館咖啡廳（AM10點開門，週三公休）</li>
+                    <small>*有販售飲料、泡麵、禁用外食，請大家做好垃圾分類！</small><br>
+                    <small>*清算館咖啡廳只允許於那裡購買的飲料或是食物的垃圾</small><br>
+                    <small>*有販售少量紀念品*清算館廁所：只有星期六&日開放。（男女廁所皆有哺乳室）</small>
+                    <li>請盡量不要隨意進出月明洞辦公室，有事請先聯絡愛門講道師。</li>
+                    <li>請不要隨意跑上去青瓦屋。</li>
+                    <li>請不要在聖子石及野心作前禱告。</li>
+                    <li>請不要在石頭造景之間攀爬行走。（有跌落之危險，請使用已開發好的路。）</li>
+                    <li>請不要獨自前往迴谷、橄欖山八角亭、克己峰、城隍堂小路（有成群山豬出沒）。</li>
+                    <li>下雨天或是下大雪時，請不要走在運動場的內圈（避免泥濘）➡請使用運動場外圈的路面行走。</li>
+                    <li>請不要觸摸青瓦屋一帶的鐘乳石及石頭座椅。</li>
+
                 </ul>
-                 
+
             </div>
             <div class="section-title"> 草坪區注意事項</div>
             <div class="card">
-                 
-                
-                    <ul style="font-size:1rem; line-height:1.8;">
-            <p style="color:#dc2626; font-weight:bold;">     (注意)請好好珍惜、愛護~</p>
-     <li>切勿鋪「塑膠地墊」，若要鋪墊🉑使用毛巾等透氣材質</li>
-     <li>進入草坪區時，需脫鞋喲！</li>
-     <li>出埃及記3章5節記載：「當把你腳上的鞋脫下來，因為你所站之地是聖地。」</li>
 
-      
+
+                <ul style="font-size:1rem; line-height:1.8;">
+                    <p style="color:#dc2626; font-weight:bold;"> (注意)請好好珍惜、愛護~</p>
+                    <li>切勿鋪「塑膠地墊」，若要鋪墊🉑使用毛巾等透氣材質</li>
+                    <li>進入草坪區時，需脫鞋喲！</li>
+                    <li>出埃及記3章5節記載：「當把你腳上的鞋脫下來，因為你所站之地是聖地。」</li>
+
+
                 </ul>
-    
+
             </div>
- 
-           
+
+
         </section>
     </main>
 
     <nav class="mobile-nav">
         <button class="nav-btn active" onclick="showPage('home')"><span class="nav-icon">🏠</span>概覽</button>
         <button class="nav-btn" onclick="showPage('schedule')"><span class="nav-icon">📅</span>行程</button>
+        <button class="nav-btn" onclick="showPage('meeting')"><span class="nav-icon">🌟</span>聚會</button>
+        <button class="nav-btn" onclick="showPage('song')"><span class="nav-icon">🎤</span>歌單</button>
         <button class="nav-btn" onclick="showPage('rooms')"><span class="nav-icon">🛌</span>分房</button>
         <button class="nav-btn" onclick="showPage('packing')"><span class="nav-icon">💼</span>行李</button>
         <button class="nav-btn" onclick="showPage('info')"><span class="nav-icon">ℹ️</span>須知</button>
@@ -555,4 +1093,5 @@
         }
     </script>
 </body>
+
 </html>
