@@ -178,6 +178,10 @@
             padding: 0.2rem 0.5rem;
             border-radius: 0.4rem;
         }
+        .time-tag.sub{
+            color: var(--primary);
+            background: #3ff3ff;
+        }
 
         .table {
             width: 100%;
@@ -260,7 +264,7 @@
     </style>
 
     <script>
-        const BUILD_UPDATED_AT = "2026.02.05 0:10"
+        const BUILD_UPDATED_AT = "2026.02.05 19:40"
 
   document.addEventListener('DOMContentLoaded', () => {
     const text = `最後更新 ${BUILD_UPDATED_AT}`
@@ -445,8 +449,8 @@
                 <div style="font-size:1rem; line-height:2;">
                     <span class="time-tag">07:30</span> 上巴士出發<br>
                     <span class="time-tag">09:00</span> 抵達月明洞<br>
-                    <span class="time-tag">11:30</span> 午餐 真美便當@316餐廳<br>
-                    <span class="time-tag">13:00-15:00</span> 台韓LTC靈修1：校園見證、台韓小組交流、禱告 @中講堂<br>
+                    <span class="time-tag">11:30</span> 午餐 真美便當 <span style=" font-weight: bold;">@316餐廳</span><br>
+                    <span class="time-tag">13:00-15:00</span> <span style=" font-weight: bold;color:var(--primary-dark);">台韓LTC靈修1：校園見證、台韓小組交流、禱告 @中講堂</span><br>
                     <span class="time-tag">16:30</span> 集合下山<br>
                     <span class="time-tag">17:30</span> 晚餐 好口味<br>
                     <span class="time-tag">19:30</span> 入住大芚山飯店
@@ -458,9 +462,9 @@
                     <span class="time-tag">07:00-08:00</span> 大芚山飯店早餐<br>
                     <span class="time-tag">08:15</span> 出發前往月明洞<br>
                     <span class="time-tag">09:00</span> 彩排&預備<br>
-                    <span class="time-tag">09:30</span> LTC靈修2 < campus指導者教育> 鄭鑽石牧師 @中講堂<br>
-                        <span class="time-tag">12:00</span> 午餐 真美便當@316餐廳<br>
-                        <span class="time-tag">14:00-17:00(暫定)</span> 韓國二代通過式@316本堂 結束集合下山<br>
+                    <span class="time-tag">09:30</span> <span style=" font-weight: bold;color:var(--primary-dark);">LTC靈修2 < campus指導者教育> 鄭鑽石牧師 @中講堂</span><br>
+                        <span class="time-tag">12:00</span> 午餐 真美便當 <span style=" font-weight: bold;">@316餐廳</span><br>
+                        <span class="time-tag">14:00-17:00(暫定)</span> 韓國二代通過式 <span style=" font-weight: bold;">@316本堂</span> 結束集合下山<br>
                         <span class="time-tag">18:00</span> 晚餐 李本家烤肉<br>
                         <span class="time-tag">19:30</span> 逛超商買早餐<br>
                         <span class="time-tag">20:30</span> 回大芚山飯店
@@ -473,9 +477,9 @@
                     <span class="time-tag">08:15</span> 出發<br>
                     <span class="time-tag">09:00</span> 主日禮拜前大合照<br>
                     <span class="time-tag">09:20</span> 入本堂主日禮拜（主日後龍錫牧師打招呼）<br>
-                    <span class="time-tag">12:30</span> 午餐 真的便當@316餐廳<br>
+                    <span class="time-tag">12:30</span> 午餐 真的便當 <span style=" font-weight: bold;">@316餐廳</span><br>
                     <span class="time-tag">14:00</span> 彩排&預備<br>
-                    <span class="time-tag">14:20-17:00</span> LTC靈修3 <二代教育分享> 韓國二代中央 @中講堂 結束集合下山<br>
+                    <span class="time-tag">14:20-17:00</span> <span style=" font-weight: bold;color:var(--primary-dark);">LTC靈修3 <二代教育分享> 韓國二代中央 @中講堂</span> 結束集合下山<br>
                         <span class="time-tag">18:00</span> 晚餐 火烤小章魚<br>
                         <span class="time-tag">20:00</span> 逛超商<br>
                         <span class="time-tag">20:30</span> 回大芚山飯店
@@ -502,7 +506,7 @@
         <section id="meeting" class="page">
             <div class="section-title">🌟 聚會行程</div>
             <div class="card">
-                <h4 style="color:var(--primary); margin:0 0 1rem 0;">2/6 台韓交流流程 </h4>
+                <h4 style="color:var(--primary); margin:0 0 1rem 0;">2/6 台韓交流流程 @中講堂 </h4>
 
                 <span class="badge" style="background:#10b981">彩排</span><br><br>
                 <div style="font-size:1rem; line-height:2;">
@@ -511,7 +515,7 @@
                     <span class="time-tag">13:25-13:30</span> 司會彩排（김다희）<br><br>
                 </div>
 
-                <span class="badge" style="background:#f59e0b">第一天 @中講堂</span><br><br>
+                <span class="badge" style="background:#f59e0b">流程</span><br><br>
 
                 <div style="font-size:1rem; line-height:2;">
                     <span class="time-tag">12:30 ~</span> 入場<br>
@@ -529,7 +533,7 @@
                 </div>
             </div>
             <div class="card">
-                <h4 style="color:var(--primary); margin:0 0 1rem 0;">2/7 CAM指導者教育（鄭鑽石牧師） </h4>
+                <h4 style="color:var(--primary); margin:0 0 1rem 0;">2/7 CAM指導者教育（鄭鑽石牧師） @中講堂 </h4>
 
                 <span class="badge" style="background:#10b981">彩排</span><br><br>
                 <div style="font-size:1rem; line-height:2;">
@@ -538,19 +542,49 @@
                     <span class="time-tag">09:30-09:33</span> 司會彩排<br><br>
                 </div>
 
-                <span class="badge" style="background:#f59e0b">第二天 @中講堂</span><br><br>
+                <span class="badge" style="background:#f59e0b">流程</span><br><br>
 
                 <div style="font-size:1rem; line-height:2;">
                     <span class="time-tag">-</span> 入場<br>
                     <span class="time-tag">-</span> 就座完畢及場內整理<br>
                     <span class="time-tag">-</span> 待機畫面<br>
                     <span class="time-tag">10:00-10:10</span> 預備讚美2首(<a
-                        href="https://youtu.be/MohwKMhoOFE?si=16U7LCi3TOvJqPA1" target="_blank">1. 良人如同太陽</a><a
+                        href="https://youtu.be/MohwKMhoOFE?si=16U7LCi3TOvJqPA1" target="_blank">1. 良人如同太陽</a>、<a
                         href="https://youtu.be/8wm-_4BKb0Q?si=d42OWHIZSpIkdxjL" target="_blank">2. 愛之道路</a>)<br>
                     <span class="time-tag">10:10-10:15</span> 司會<br>
                     <span class="time-tag">10:15-11:45</span> 教育話語（韓國校園中央 鑽石牧師）/聖經奉讀（김다희）<br>
                     <span class="time-tag">11:45-11:50</span> 司會結尾（台灣）<br>
                     <span class="time-tag">11:50-11:55</span> 拍照留念<br>
+                </div>
+            </div>
+            <div class="card">
+                <h4 style="color:var(--primary); margin:0 0 1rem 0;">2/8 二代教育分享 @中講堂 </h4>
+
+                <span class="badge" style="background:#10b981">彩排</span><br><br>
+                <div style="font-size:1rem; line-height:2;">
+                    <span class="time-tag">14:00~14:15</span> 讚美彩排（台灣3名）<br>
+                    <span class="time-tag">14:15~14:25</span> 司會&話語彩排<br><br>
+                </div>
+
+                <span class="badge" style="background:#f59e0b">流程</span><br><br>
+
+                <div style="font-size:1rem; line-height:2;">
+                    <span class="time-tag">13:50~14:00</span>入場&就座完成會場整頓
+<br>
+                    <span class="time-tag">14:25~14:35</span> 預備讚美2首(<a
+                        href="https://youtu.be/kDv57kBCTQA?si=bHENYekzO3Owtnt_" target="_blank">1. 我主是答案</a>、<a
+                        href="https://www.youtube.com/watch?v=U9zWnhGdwtU" target="_blank">2. 你會興盛順利又亨通</a>)<br>
+                    <span class="time-tag">14:35~14:40</span> 司會<br>
+                    <span class="time-tag">14:40~16:40</span> 教育話語（希望光二代中央）<br>
+                <h4 style="font-size:.9rem; margin:.5rem 0;text-indent: 10px;">二代整體管理的理解與教育 </h4>
+
+                    <ul style="font-size: 0.9rem;padding: 0;list-style: none;text-indent: 20px;line-height: 1.5;">
+                        <li>• R 教育與信件</li>
+                        <li>• 部門／單位課程介紹</li>
+                        <li>• 二代講義（課程）指引相關說明</li>
+                    </ul>
+                                        <span class="time-tag">16:40~16:45</span> 司會<br>
+                    <span class="time-tag">16:45~16:50</span> 大合照<br>
                 </div>
             </div>
         </section>
@@ -902,31 +936,31 @@
             <div class="card" style="border-top: 6px solid #3b82f6;">
                 <h4 style="margin-top:0;">🔵 雙床房 (男生)</h4>
                 <ul style="font-size:0.9rem; padding:0; list-style:none;">
-                    <li>• 張博閔、謝漢興</li>
-                    <li>• 陳泓霖、林竑堯</li>
-                    <li>• 李易昀、趙宥駿</li>
-                    <li>• 賴敬和、陳子敬</li>
-                    <li>• 林柏儒、謝翔寬、張凱傑 <small>(2/8入住+一床)</small></li>
+                    <li>• 張博閔、謝漢興 <span class="color:var(--primary)">214</span></li>
+                    <li>• 陳泓霖、林竑堯 <span class="color:var(--primary)">215</span></li>
+                    <li>• 李易昀、趙宥駿 <span class="color:var(--primary)">310</span></li>
+                    <li>• 賴敬和、陳子敬 <span class="color:var(--primary)">311</span></li>
+                    <li>• 林柏儒、謝翔寬、張凱傑 <small>(2/8入住+一床)</small> <span class="color:var(--primary)">312</span></li>
                 </ul>
             </div>
             <div class="card" style="border-top: 6px solid #ec4899;">
                 <h4 style="margin-top:0;">🔴 雙床房 (女生)</h4>
                 <ul style="font-size:0.9rem; padding:0; list-style:none;">
-                    <li>• 胡琬霖、林安楡</li>
-                    <li>• 鄭惠理、黃千芳</li>
-                    <li>• 李沂瑾、王儀安</li>
-                    <li>• 顧國卉、許珮甄</li>
-                    <li>• 陳盈億、王癸雅</li>
-                    <li>• 蕭敏秀、呂亭亭</li>
-                    <li>• 蘇玟琳、陳宜廷</li>
+                    <li>• 胡琬霖、林安楡 <span class="color:var(--primary)">201</span></li>
+                    <li>• 鄭惠理、黃千芳 <span class="color:var(--primary)">202</span></li>
+                    <li>• 李沂瑾、王儀安 <span class="color:var(--primary)">205</span></li>
+                    <li>• 顧國卉、許珮甄 <span class="color:var(--primary)">206</span></li>
+                    <li>• 陳盈億、王癸雅 <span class="color:var(--primary)">207</span></li>
+                    <li>• 蕭敏秀、呂亭亭 <span class="color:var(--primary)">208</span></li>
+                    <li>• 蘇玟琳、陳宜廷 <span class="color:var(--primary)">213</span></li>
                 </ul>
             </div>
             <div class="card" style="border-top: 6px solid #f472b6;">
                 <h4 style="margin-top:0;">💗 兩人房 (一大床)</h4>
                 <ul style="font-size:0.9rem; padding:0; list-style:none;">
-                    <li>• 卓竫雯、王心妤</li>
-                    <li>• 高汝儀、戴若蘭</li>
-                    <li>• 朱汎琳、詹珽雅</li>
+                    <li>• 卓竫雯、王心妤 <span class="color:var(--primary)">306</span></li>
+                    <li>• 高汝儀、戴若蘭 <span class="color:var(--primary)">307</span></li>
+                    <li>• 朱汎琳、詹珽雅 <span class="color:var(--primary)">308</span></li>
                 </ul>
             </div>
         </section>
